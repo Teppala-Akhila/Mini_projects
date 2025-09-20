@@ -6,28 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function but(){
-            var a = document.getElementById("demo").value;
-            var b=document.getElementsByTagName("option");
-            for(i=0;i<a.length;i++){
-                var c=a.charCodeAt(i);
-            }
-            for(i=0;i<b.length;i++){
-                if((c>=65 && c<=90 ||c>=97 && c<=122)){
-                    if (b[i].text.toLowerCase().startsWith(a.toLowerCase())) {
-                        console.log(b[i].text);  
-                    }
-                }
-                // else{
-                //     console.log("Enter defined value");
-                // }
-                else{
-                    console.log("Enter defined value");
-                }
-        }       
-    }
-    </script>
 <label for="demo">Enter Text:</label><br>
 <input type="text" id="demo" name="text" placeholder="Enter here...">
 <button type="button" id="bu" onclick="but()">Filter</button>
@@ -288,5 +266,19 @@
 <option>Zambia</option>
 <option>Zimbabwe</option>
 </select>
+<script>
+        function but(){
+            var a = document.getElementById("demo").value;
+            var b=document.getElementsByTagName("option");
+            for(i=0;i<b.length;i++){
+                if(b[i].innerText.toLowerCase().startsWith(a.toLowerCase())){
+                    b[i].hidden=false;
+                }
+                else{
+                    b[i].hidden=true;
+                }
+            }
+    }
+    </script>
 </body>
 </html>
