@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="stu">Enter:</label>
+    <input type="text" id="stu" name="stu">
+    <button type="button" onclick="fun()">Filter</button>
+<script>
+var student=[
+{id:1,name:"akhi",password:"ab"},
+{id:2,name:"joshika",password:"cd"},
+{id:3,name:"rahul",password:"ef"},
+{id:4,name:"meera",password:"gh"},
+{id:5,name:"sanjay",password:"ij"},
+{id:6,name:"neha",password:"kl"},
+{id:7,name:"arjun",password:"mn"},
+{id:8,name:"priya",password:"op"},
+{id:9,name:"vishal",password:"qr"},
+{id:10,name:"kavya",password:"st"}
+]
+// var c = student.find(s=>s.id===3)
+// console.log(c);
+function fun(){
+    var a=document.getElementById("stu").value;
+    for(i=0;i<student.length;i++){
+        var c = student.find(s=>s.id==a);
+        var p=document.getElementById("tab");
+        if(c){
+            var ob=document.createAttribute("tr")
+            p.appendChild(ob);
+        }
+        else{
+            console.log("Match Not Found");
+        }
+    }
+}
+    </script>
+</body>
+</html>
