@@ -1,0 +1,34 @@
+ h1{
+    text-align: center;
+        }
+.sub_container{
+    text-align: center;
+    border:2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+.sub_container2,.sub_container4{
+    margin:20px;
+    padding:10px;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+td {
+    text-align: center;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px 12px;
+}
+body {
+        background-color: rgb(245, 165, 7);
+        margin: 0;
+        padding: 0;
+    }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <h1>*TO-DO LIST*</h1>
+    <div class="main_container">
+        <div class="sub_container">
+            <label for="title">Todo Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="title">Todo Desciption:</label>
+            <textarea id="desc" rows="2" cols="7"></textarea>
+            <br><br><br>
+            <label for="p_date">Posted Date:</label>
+            <input type="date" id="p_date" name="p_date">
+            <label for="t_date">Target Date:</label>
+            <input type="date" id="t_date" name="t_date">
+            <label for="status">Status:</label>
+            <select id="status">
+                <option>Pending</option>
+                <option>In progress</option>
+                <option>Completed</option>
+        </select>
+        </div>
+        <div class="sub_container2">
+            <button type="button" onclick="add()">ADD TASK</button>
+            <button type="button" onclick="reset()">RESET TASK</button>
+        </div>
+    </div>
+    </div>
+    <div class="main_container2">
+        <div class="sub_container3">
+            <table id="table">
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>DESCRIPTION</th>
+                <th>POSTED DATE</th>
+                <th>TARGET DATE</th>
+                <th>STATUS</th>
+            </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+        </div>
+        <div class="sub_container4">
+            <button type="button" id="edit">EDIT</button>
+            <button type="button" id="update">STATUS UPDATE</button>
+        </div>
+    </div>   
+    <script>
+        
+    let id = 1;
+    let selectedRow = null;
+
+    function add() {
+        var a = document.querySelector(".sub_container");
+        var b = a.querySelectorAll("#title,#desc,#p_date,#t_date,#status");
+        var values = {};
+        b.forEach(el => { values[el.id] = el.value; });
+
+        var parent = document.getElementById("table_body");
+        var row = document.createElement("tr");
+
+        let idCell = document.createElement("td");
+        let radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "sno";
+        radio.onclick = function () { selectRow(row); };
+        idCell.appendChild(radio);
+        idCell.append(" " + id++);
+        row.appendChild(idCell);
+
+        for (let key in values) {
+            let cell = document.createElement("td");
+            cell.innerText = values[key];
+            row.appendChild(cell);
+        }
+
+        parent.appendChild(row);
+        b.forEach(el => el.value = "");
+    }
+
+    function reset() {
+        var a = document.querySelector(".sub_container");
+        var b = a.querySelectorAll("#title,#desc,#p_date,#t_date,#status");
+        b.forEach(el => el.value = "");
+    }
+
+    function selectRow(row) {
+        selectedRow = row;
+        let cells = row.getElementsByTagName("td");
+        document.getElementById("title").value = cells[1].innerText;
+        document.getElementById("desc").value = cells[2].innerText;
+        document.getElementById("p_date").value = cells[3].innerText;
+        document.getElementById("t_date").value = cells[4].innerText;
+        document.getElementById("status").value = cells[5].innerText;
+    }
+
+    document.getElementById("edit").onclick = function () {
+        if (!selectedRow) {
+            alert("Please select a row to edit.");
+        } else {
+            alert("You can now edit the fields and click STATUS UPDATE.");
+        }
+    }
+
+    document.getElementById("update").onclick = function () {
+        if (!selectedRow) {
+            alert("Please select a row to update.");
+            return;
+        }
+
+        let cells = selectedRow.getElementsByTagName("td");
+        cells[1].innerText = document.getElementById("title").value;
+        cells[2].innerText = document.getElementById("desc").value;
+        cells[3].innerText = document.getElementById("p_date").value;
+        cells[4].innerText = document.getElementById("t_date").value;
+        cells[5].innerText = document.getElementById("status").value;
+
+        alert("Row updated successfully!");
+    }
+    </script> 
+</body>
+</html>
