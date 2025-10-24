@@ -4,7 +4,7 @@ const Body=()=>{
     return(
         <div className="container2">
         <div className="movie1">
-            <img src="https://play-lh.googleusercontent.com/oQxl3qEYV-aNwDUPPotxf04VR3uUeeEPk3vBTuVnOM2_MGzr6Cg2PI0AOGdL4bB70FaXXA" alt="Ninnu Kori"/>
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/f4aa623d9fb26421fec29f384e8fbb43bb100364ca32cbe6e85f46ab9958c8bc.jpg" alt="Ninnu Kori"/>
             <h3>Ninnu Kori</h3>
             <p>Rating: 7.5</p>
         </div>
@@ -46,12 +46,13 @@ const Body=()=>{
         </div>
 
         <div className="movie8">
-            <img src="https://play-lh.googleusercontent.com/bMquw55TuAmjVHGYtuplkrI9WO2lrDKpYnICF0lAlCko3IB1H4orXp-WDg0N25Rq155yz9FyGp1kJQ9ZDLo" alt="Vakeel sabb"/>
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/acda4ca3da981ad44848c04d5b79267b6edef62f7ba4a04383b6c976eda674a2.jpg" alt="Vakeel sabb"/>
             <h3>Vakeel Sabb</h3>
             <p>Rating: 7.4</p>
         </div>
 </div>
     );
 };
+
 
 export default Body;
