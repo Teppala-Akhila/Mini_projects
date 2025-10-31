@@ -1,0 +1,249 @@
+/* =============================
+   🌟 Global Styles
+   ============================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: aliceblue;
+}
+
+/* =============================
+   🌟 Header (BookMyShow-style)
+   ============================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: aliceblue;
+  padding: 15px 60px;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: #aee0ff;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Center Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #e03352;
+}
+
+/* Right-side Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.actions button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.filter-btn:hover {
+  background-color: #333;
+}
+
+.signin-btn {
+  background-color: #ff385c;
+  color: white;
+}
+
+.signin-btn:hover {
+  background-color: #e03352;
+}
+
+/* =============================
+   🌟 Movie Grid Layout
+   ============================= */
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 60px;
+  justify-items: center;
+}
+
+/* Movie Card Style */
+.movie-card {
+  background-color: #111;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 220px;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.movie-card p {
+  color: #ccc;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* =============================
+   🌟 Footer
+   ============================= */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: aliceblue;
+  border-top: 1px solid #222;
+  background-color: #000;
+}
+
+.footer-section {
+  text-align: center;
+  color: aliceblue;
+}
+
+/* =============================
+   🌟 Responsive Design
+   ============================= */
+@media (max-width: 1024px) {
+  .search-bar input {
+    width: 220px;
+  }
+  .container2 {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-bar {
+    order: 3;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .actions {
+    order: 2;
+  }
+
+  .container2 {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .movie-card img {
+    height: 260px;
+  }
+}
+
+
+
+
+
+
+/* .container1{
+    display: flex;
+    color:aliceblue;
+}
+.container1 h1{
+    margin-left: 60px;
+}
+.container1 form{
+    display:flex;
+    height:30px;
+    margin:20px;
+    padding:10px;
+    margin-left: 800px;
+}        
+.container2{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:90px;
+    padding: 60px;
+    margin: 10px;
+}
+.container2 img{
+    width: 100%;
+    height:400px;
+}
+body{
+    background-color: black;
+}
+h3,p{
+    color: aliceblue;
+    text-align: center;
+}
+.footer{
+    text-align: center;
+}
+.footer-section{
+    text-align: center;
+    color: aliceblue;
+} */
